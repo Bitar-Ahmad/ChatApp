@@ -8,8 +8,11 @@ var socket = io();
     var scrollHeight = messages.prop('scrollHeight');
     var newMessageHeight = newMessage.innerHeight();
     var lastMessageHeight = newMessage.prev().innerHeight();
+
+    var sex = jQuery('#messages').prop('clientHeight');
+
     if(clientHeight + scrollTop + newMessageHeight + lastMessageHeight >= scrollHeight) {
-      console.log('Scroll needed');
+      messages.scrollTop(scrollHeight);
     };
    };
 
